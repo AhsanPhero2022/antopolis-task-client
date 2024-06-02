@@ -5,10 +5,8 @@ import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import Typography from "@mui/material/Typography";
 import ImageUpload from "@/components/imageUpload/ImageUpload";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -33,7 +31,7 @@ export default function Modal() {
   return (
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Open dialog
+        Add Animal
       </Button>
       <BootstrapDialog
         onClose={handleClose}
@@ -41,7 +39,7 @@ export default function Modal() {
         open={open}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Modal title
+          Add an Animal
         </DialogTitle>
         <IconButton
           aria-label="close"
@@ -58,11 +56,6 @@ export default function Modal() {
         <DialogContent dividers>
           <ImageUpload></ImageUpload>
         </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
-          </Button>
-        </DialogActions>
       </BootstrapDialog>
     </React.Fragment>
   );
