@@ -16,7 +16,9 @@ const homePage = () => {
         </div>
       </div>
 
-      <AllImages />
+      <div className="mx-auto">
+        <AllImages />
+      </div>
     </div>
   );
 };

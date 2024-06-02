@@ -6,9 +6,12 @@ type TAnimals = {
 };
 
 const GetAllCategory = async () => {
-  const products = await fetch("http://localhost:5000/category", {
-    cache: "no-store",
-  });
+  const products = await fetch(
+    "https://antopolis-task-server.vercel.app/category",
+    {
+      cache: "no-store",
+    }
+  );
   const animals = await products.json();
 
   return (

@@ -7,8 +7,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import ImageUpload from "@/components/imageUpload/ImageUpload";
-import AddCategory from "@/components/addCategory/AddCategory";
+import dynamic from "next/dynamic";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -20,6 +19,10 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 export default function CategoryModal() {
+  const AddCategory = dynamic(
+    () => import("@/components/addCategory/AddCategory"),
+    { ssr: false }
+  );
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

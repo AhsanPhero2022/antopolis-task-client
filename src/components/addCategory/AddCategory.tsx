@@ -11,13 +11,14 @@ type Inputs = {
 const AddCategory = () => {
   const {
     register,
-
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       await postCategory(data);
+      reset();
     } catch (error) {
       console.error("Failed to submit data:", error);
     }
