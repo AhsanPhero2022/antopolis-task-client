@@ -1,39 +1,42 @@
-"use client"
+"use client";
 
-import { useState } from 'react';
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const UploadPage=()=> {
-  const [file, setFile] = useState(null);
-  const [message, setMessage] = useState('');
+import { ReactNode } from "react";
+import { postData } from "../fetchMethod/postMethod";
+type Inputs = {
+  name: string;
+  image: string;
+  data: ReactNode;
+};
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+const ImageUpload = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      await postData(data);
+    } catch (error) {
+      console.error("Failed to submit data:", error);
+    }
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    const res = await fetch('http://localhost:5000/upload-image', {
-      method: 'POST',
-      body: formData,
-    });
-
-    const data = await res.json();
-    setMessage(data.message);
-  };
-
+  // write post method in here
   return (
     <div>
-      <h1>Upload Image</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload</button>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input defaultValue="test" {...register("name")} />
+
+        <input {...register("image", { required: true })} />
+
+        {errors.image && <span>This field is required</span>}
+
+        <input type="submit" />
       </form>
-      {message && <p>{message}</p>}
     </div>
   );
-}
-export default UploadPage
+};
+
+export default ImageUpload;
