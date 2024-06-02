@@ -1,5 +1,7 @@
 # Next.js Animal Gallery Project
 
+- live link: https://antopolis-task-client.vercel.app
+
 This is a Next.js project built with TypeScript. The application features a homepage that fetches data from a server and displays it. It includes filtering options and allows users to add animals and their categories via a Material UI modal. The project utilizes several modern technologies and libraries for an enhanced development experience and user interface.
 
 ## Features
@@ -66,3 +68,21 @@ Example endpoint structure:
 - **POST** `/category`: Add a new category.
 
 ### Folder Structure
+
+## Usage
+
+1. **Homepage**: Displays a grid of animal images fetched from the server.
+2. **Filtering**: Use the dropdown menu to filter animals by category.
+3. **Add Animals**: Click the button to open the modal and add a new animal. Fill in the animal's name, image URL, and select a category.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any inquiries or feedback, please contact `your-email@example.com`.
