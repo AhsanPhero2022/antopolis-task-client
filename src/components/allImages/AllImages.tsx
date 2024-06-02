@@ -1,3 +1,4 @@
+"use server";
 import Image from "next/image";
 import React from "react";
 
@@ -9,7 +10,7 @@ type TAnimals = {
 
 const AllImages = async () => {
   const products = await fetch("http://localhost:5000/images", {
-    cache: "no-cache",
+    cache: "no-store",
   });
   const animals = await products.json();
 
