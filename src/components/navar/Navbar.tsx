@@ -1,9 +1,9 @@
-
+import GetAllCategory from "../getCategory/GetAllCategory";
 
 const Navbar = () => {
   return (
     <div>
-      <h1>this is navbar</h1>
+      <GetAllCategory />
     </div>
   );
 };

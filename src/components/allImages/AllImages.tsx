@@ -21,9 +21,9 @@ const AllImages = async () => {
           <div key={item._id} className="card card-compact w-auto shadow-xl">
             <figure>
               <Image
-                className="w-[80px] h-[100px]"
-                width={100}
-                height={100}
+                className="w-[140px] h-[120px]"
+                width={200}
+                height={200}
                 src={item.image}
                 alt="image loading..."
               />

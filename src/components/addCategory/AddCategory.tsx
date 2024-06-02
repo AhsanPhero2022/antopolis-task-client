@@ -11,12 +11,14 @@ type Inputs = {
 const AddCategory = () => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       await postCategory(data);
+      reset();
     } catch (error) {
       console.error("Failed to submit data:", error);
     }
@@ -27,7 +29,7 @@ const AddCategory = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <input
-            className="mb-5  rounded h-8 px-3 py-2"
+            className="mb-5 bg-black text-white rounded h-8 px-3 py-2"
             placeholder="add category"
             {...register("category", { required: true })}
           />
