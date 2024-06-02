@@ -7,9 +7,7 @@ type TAnimals = {
 
 const GetAllCategory = async () => {
   const products = await fetch("http://localhost:5000/category", {
-    next: {
-      revalidate: 300,
-    },
+    cache: "no-store",
   });
   const animals = await products.json();
 
@@ -17,7 +15,7 @@ const GetAllCategory = async () => {
     <div className="my-12 mx-auto">
       <ul className="flex gap-3 ">
         {animals?.map((item: TAnimals) => (
-          <li className="btn btn-outline btn-error" key={item._id}>
+          <li key={item._id} className="btn btn-outline btn-error">
             <h2>{item.category}</h2>
           </li>
         ))}

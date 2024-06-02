@@ -1,5 +1,6 @@
 import AddCategory from "@/components/addCategory/AddCategory";
 import AllImages from "@/components/allImages/AllImages";
+
 import Navbar from "@/components/navar/Navbar";
 import CategoryModal from "@/components/shared/InPutModal/CategoryModal";
 import Modal from "@/components/shared/InPutModal/Modal";
@@ -14,6 +15,7 @@ const homePage = () => {
           <CategoryModal />
         </div>
       </div>
+
       <AllImages />
     </div>
   );

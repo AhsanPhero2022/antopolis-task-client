@@ -29,7 +29,7 @@ const ImageUpload = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <input
-            className="mb-5 rounded h-8  px-3 py-2"
+            className="bg-black text-white mb-5 rounded h-8  px-3 py-2"
             placeholder="inter the name"
             {...register("name")}
           />
@@ -37,7 +37,7 @@ const ImageUpload = () => {
 
         <div>
           <input
-            className="mb-5  rounded h-8 px-3 py-2"
+            className="mb-5 bg-black text-white rounded h-8 px-3 py-2"
             placeholder="inter the photo url"
             {...register("image", { required: true })}
           />
